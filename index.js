@@ -1,7 +1,7 @@
 function makeAnagram(a, b) {
     const long = a.length >= b.length ? a : b
     const short = a.length < b.length ? a : b
-    console.log(long, short)
+
     let charMapLong = {}
     let charMapShort = {}
     let output = 0
@@ -31,10 +31,31 @@ function makeAnagram(a, b) {
         }  
     }
 
-    console.log(charMapLong, charMapShort)
-
 
     console.log('Number of deletions:', output)
 }
 
 makeAnagram('fcrxzwscanmligyxyvym', 'jxwtrhvujlmrpdoqbisbwhmgpmeoke')
+
+function makeAnagram2(a, b) {
+  let minDeletions = 0
+
+  const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split()
+
+  let charMapA = Array.from(Array(26), () => 0)
+  let charMapB = Array.from(Array(26), () => 0)
+
+  for (let char in charMapA) {
+    charMapA[char] = charMapA[char] + 1 || 1
+  }
+
+  for (let char of b) {
+    charMapB[char] = charMapB[char] + 1 || 1
+  }
+
+  // for (let char of al)
+
+  console.log(charMapA, charMapB)
+}
+
+makeAnagram2('fcrxzwscanmligyxyvym', 'jxwtrhvujlmrpdoqbisbwhmgpmeoke')
